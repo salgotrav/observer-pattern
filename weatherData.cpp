@@ -1,6 +1,8 @@
+#include "weatherData.h"
+
 #include <iostream>
 
-class Private {
+class weatherData::Private {
 	public:
 		float temp;
 		float humidity;
@@ -20,26 +22,26 @@ weatherData::weatherData(): d(new Private) {
 
 }
 
-float weatherData::getTemperature() {
+float weatherData::getTemperature() const{
 	return d->temp;
 }
 
-float weatherData::getHumidity() {
+float weatherData::getHumidity() const{
 	return d->humidity;
 }
 
-float weatherData::getPressure() {
+float weatherData::getPressure() const{
 	return d->pressure;
 }
 
-void Private::setTemperature(float temp) {
-	d->temp = temp;
+void weatherData::Private::setTemperature(float temp) {
+	this->temp = temp;
 }
 
-void Private::setHumidity(float humidity) {
-	d->humidity = humidity;
+void weatherData::Private::setHumidity(float humidity) {
+	this->humidity = humidity;
 }
 
-void Private::setPressure(float pressure) {
-	d->pressure = pressure;
+void weatherData::Private::setPressure(float pressure) {
+	this->pressure = pressure;
 }
